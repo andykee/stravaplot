@@ -19,7 +19,7 @@ COLORMAP = {'electricblue' : {
                 'background'   : 'orangered'},
             'gyroscope' : {
                 'linecolor'    : '#68D2E2',
-                'terraincolor' : '#121B24',
+                'terraincolor' : '0.05',
                 'background'   : '#132029'}
 }
 
@@ -54,6 +54,7 @@ class plot:
         self.linecolor = 'deepskyblue'
         self.linealpha = 0.8
         self.terraincolor = '0.2'
+        self.terrainlinewidth = 0.2
         self.threshold = 0.006
         self.figwidth = None
         self.fig = None
@@ -110,7 +111,7 @@ class plot:
             for f in self.terrain_data:
                 x,y,topo = terrain(self._north,self._south,self._east,self._west,f)
                 ax.contourf(x,y,topo,1,cmap=colors.ListedColormap([self.background,self.background]))
-                ax.contour(x,y,topo,50,hold='on',colors=self.terraincolor,linewidths=0.15)
+                ax.contour(x,y,topo,50,hold='on',colors=self.terraincolor,linewidths=self.terrainlinewidth)
         else:
         # no terriain data available; we need to fake the background color
             x = np.linspace(self._west,self._east,2)

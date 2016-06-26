@@ -16,7 +16,11 @@ s.show()
 s.save('filename.png')
 ```
 
+<img src="http://i.imgur.com/GAyjv1d.png" width="600px" />
+
 or many activities:
+
+<img src="http://imgur.com/Ao6q2f8" width="600px" />
 
 ```python
 s = strava.plot('activities_dir')
@@ -29,6 +33,8 @@ It can also show terrain:
 s = strava.plot('activities', terrain='usgs_ned.img')
 s.show()
 ```
+
+<img src="http://imgur.com/wVLUQTv" width="600px" />
 
 See more on plotting terrain below.
 
