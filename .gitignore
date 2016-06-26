@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.gpx
+*.img
+*.png
+*.jpg
+*.jpeg
+*.gif
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
