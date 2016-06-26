@@ -16,7 +16,7 @@ s.show()
 s.save('filename.png')
 ```
 
-<img src="http://i.imgur.com/GAyjv1d.png" width="450px" />
+<img src="http://i.imgur.com/hpNd4lz.png" width="450px" />
 
 or many activities:
 
@@ -34,7 +34,7 @@ s = strava.plot('activities', terrain='usgs_ned.img')
 s.show()
 ```
 
-<img src="http://imgur.com/wVLUQTv.png" width="450px" />
+<img src="http://i.imgur.com/S87ikOx.png" width="450px" />
 
 See more on plotting terrain below.
 
