@@ -4,28 +4,31 @@ stravaplot is a python library for visualizing Strava (or any other GPX data for
 
 It can be used to visualize one activity:
 
-    :::python
-    import stravaplot as strava
+```python
+import stravaplot as strava
     
-    s = strava.plot('activity.gpx')
+s = strava.plot('activity.gpx')
 
-    # display the plot
-    s.show()
+# display the plot
+s.show()
 
-    # save it as an image
-    s.save('filename.png')
+# save it as an image
+s.save('filename.png')
+```
 
 or many activities:
 
-    :::python
-    s = strava.plot('activities_dir')
-    s.show()
+```python
+s = strava.plot('activities_dir')
+s.show()
+```
 
 It can also show terrain:
 
-    :::python
-    s = strava.plot('activities', terrain='usgs_ned.img')
-    s.show()
+```python
+s = strava.plot('activities', terrain='usgs_ned.img')
+s.show()
+```
 
 See more on plotting terrain below.
 
@@ -53,13 +56,15 @@ stravaplot has a few settings which can be changed.
 
 For example, to change the padding factor:
 
-    :::python
-    s.padding = 0.25
+```python
+s.padding = 0.25
+```
 
 Print a listing of current settings with
 
-    :::python
-    s.settings
+```python
+s.settings
+```
 
 ## Colormaps
 Several custom colormaps are included:
@@ -70,7 +75,7 @@ Several custom colormaps are included:
 
 To change colormaps,
 
-    :::python
-    s.colormap('gyroscope')
-
+```python
+s.colormap('gyroscope')
+```
 
