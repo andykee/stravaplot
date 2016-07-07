@@ -42,9 +42,37 @@ See more on plotting terrain below.
 Installation ranges from simple to hard, depending on your environment. In the simplest case, install the dependencies and you should be good to go. If you're on macOS and using virtualenvs, see below: 
 
 ### Installing GDAL on macOS
+Use homebrew to install GDAL:
 
+```bash
+brew install gdal
+```
+
+Now we need to install GDAL inside our virtualenv. Note that the version pip installs must be the same as the version homebrew installs (At least to first order - homebrew installed GDAL 1.13.1 and the closest version available via pip is 1.11.2. This doesn't appear to cause any problems.) Inside our virtualenv, install GDAL with pip:
+
+```bash
+pip install GDAL==1.11.2
+```
 
 ### Using matplotlib on macOS inside a virtualenv
+The GUI frameworks that matplotlib uses for interactive figures don't play nicely with virtualenvs. Specifically, the default one that is configured for use on (at least) macOS breaks inside a virtualenv. We need to tell matplotlib to use a different framework that works within a virtualenv. With matplotlib installed,
+
+```bash
+cd ~/.virtualenvs/<virtualenv name>/lib/python3.5/site-packages/matplotlib/mpl-data
+```
+
+We need to edit the `matplotlibrc` fle, so open it up in your favorite editor. Find the line that says
+
+```bash
+backend : macosx
+```
+
+and change it to
+
+```bash
+backend : TkAgg
+```
+
 
 
 ## Settings
