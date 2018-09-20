@@ -113,7 +113,7 @@ class plot:
                 ax.contourf(x,y,topo,1,cmap=colors.ListedColormap([self.background,self.background]))
                 ax.contour(x,y,topo,50,hold='on',colors=self.terraincolor,linewidths=self.terrainlinewidth)
         else:
-        # no terriain data available; we need to fake the background color
+        # no terrain data available; we need to fake the background color
             x = np.linspace(self._west,self._east,2)
             y = np.linspace(self._north,self._south,2)
             topo = np.array([[0,0],[0,0]])
