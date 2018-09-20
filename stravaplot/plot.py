@@ -39,7 +39,7 @@ class plot:
         if terrain_path is not None:
             if isfile(terrain_path):
                 self.terrain_data = [terrain_path]
-            elif isdir(terrain_data):
+            elif isdir(terrain_path):
                 self.terrain_data = [join(terrain_path,f) for f in listdir(terrain_path) if isfile(join(terrain_path,f))]
             else:
                 raise TypeError('Invalid terrain data path')
@@ -68,7 +68,7 @@ class plot:
     def _draw(self):
         self.fig = plt.figure(frameon=False)
         if self.figwidth is not None:
-            self.fig.set_figwidth(figwidth)
+            self.fig.set_figwidth(self.figwidth)
         ax = plt.Axes(self.fig,[0,0,1,1],)
         ax.set_aspect('equal')
         ax.set_xticks([])
