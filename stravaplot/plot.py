@@ -76,6 +76,8 @@ class plot:
         ax.set_axis_off()
         self.fig.add_axes(ax)
 
+        threshold_squared = self.threshold**2
+
         for f in self.strava_data:
             with open(f) as gpx_file:
                 gpx = gpxpy.parse(gpx_file)
@@ -86,7 +88,7 @@ class plot:
                         for point in segment.points:
                             lat.append(point.latitude)
                             lon.append(point.longitude)
-                    lat,lon = _deline(lat,lon,self.threshold)
+                    lat,lon = _deline(lat,lon,threshold_squared)
                     ax.plot(lon,lat,color=self.linecolor,lw=self.linewidth,alpha=self.linealpha)
 
         self._west,self._east = ax.get_xlim()
@@ -159,7 +161,7 @@ class plot:
 
 
 
-def _deline(lat, lon,threshold):
+def _deline(lat, lon,threshold_squared):
     """ A very simple attempt at removing data collection errors (which appear
     as jumps between locations. Ideally the data will be more appropriately 
     filtered before plotting."""
@@ -172,7 +174,7 @@ def _deline(lat, lon,threshold):
             lon2 = lon[i]
             lon1 = lon[i-1]
             d_squared = (lon2-lon1)**2 + (lat2-lat1)**2
-            if d_squared > threshold**2:
+            if d_squared > threshold_squared:
                 lat.insert(i,np.nan)
                 lon.insert(i,np.nan)
                 i += 2
