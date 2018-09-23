@@ -171,8 +171,8 @@ def _deline(lat, lon,threshold):
             lat1 = lat[i-1]
             lon2 = lon[i]
             lon1 = lon[i-1]
-            d = sqrt((lon2-lon1)**2 + (lat2-lat1)**2)
-            if d > threshold:
+            d_squared = (lon2-lon1)**2 + (lat2-lat1)**2
+            if d_squared > threshold**2:
                 lat.insert(i,np.nan)
                 lon.insert(i,np.nan)
                 i += 2
