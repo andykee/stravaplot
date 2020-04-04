@@ -39,7 +39,7 @@ class plot:
         if terrain_path is not None:
             if isfile(terrain_path):
                 self.terrain_data = [terrain_path]
-            elif isdir(terrain_data):
+            elif isdir(terrain_path):
                 self.terrain_data = [join(terrain_path,f) for f in listdir(terrain_path) if isfile(join(terrain_path,f))]
             else:
                 raise TypeError('Invalid terrain data path')
@@ -68,7 +68,7 @@ class plot:
     def _draw(self):
         self.fig = plt.figure(frameon=False)
         if self.figwidth is not None:
-            self.fig.set_figwidth(figwidth)
+            self.fig.set_figwidth(self.figwidth)
         ax = plt.Axes(self.fig,[0,0,1,1],)
         ax.set_aspect('equal')
         ax.set_xticks([])
@@ -113,7 +113,7 @@ class plot:
                 ax.contourf(x,y,topo,1,cmap=colors.ListedColormap([self.background,self.background]))
                 ax.contour(x,y,topo,50,hold='on',colors=self.terraincolor,linewidths=self.terrainlinewidth)
         else:
-        # no terriain data available; we need to fake the background color
+        # no terrain data available; we need to fake the background color
             x = np.linspace(self._west,self._east,2)
             y = np.linspace(self._north,self._south,2)
             topo = np.array([[0,0],[0,0]])
