@@ -31,7 +31,8 @@ class plot:
         if isfile(strava_path):
             self.strava_data = [strava_path]
         elif isdir(strava_path):
-            self.strava_data = [join(strava_path,f) for f in listdir(strava_path) if isfile(join(strava_path,f))]
+            self.strava_data = [join(strava_path,f) for f in listdir(strava_path) if
+                                f.endswith(".gpx") and isfile(join(strava_path,f))]
         else:
             raise TypeError('Invalid strava data path')
 
