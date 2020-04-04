@@ -1,12 +1,12 @@
 # stravaplot
 
-stravaplot is a python library for visualizing Strava (or any other GPX data for that matter) activity tracks. 
+stravaplot is a python library for visualizing Strava (or any other GPX data for that matter) activity tracks.
 
 It can be used to visualize one activity:
 
 ```python
 import stravaplot as strava
-    
+
 s = strava.plot('activity.gpx')
 
 # display the plot
@@ -39,7 +39,7 @@ s.show()
 See more on plotting terrain below.
 
 ## Installation
-Installation ranges from simple to hard, depending on your environment. In the simplest case, install the dependencies and you should be good to go. If you're on macOS and using virtualenvs, see below: 
+Installation ranges from simple to hard, depending on your environment. In the simplest case, install the dependencies and you should be good to go. If you're on macOS and using virtualenvs, see below:
 
 ### Installing GDAL on macOS
 Use homebrew to install GDAL:
@@ -76,17 +76,17 @@ backend : TkAgg
 
 
 ## Settings
-stravaplot has a few settings which can be changed. 
+stravaplot has a few settings which can be changed.
 
-* `background` - 
-* `linecolor` - 
-* `linewidth` - 
-* `linealpha` - 
-* `terraincolor` - 
-* `figwidth` - 
-* `padding` - 
-* `dpi` - 
-* `threshold` - 
+* `background` -
+* `linecolor` -
+* `linewidth` -
+* `linealpha` -
+* `terraincolor` -
+* `figwidth` -
+* `padding` -
+* `dpi` -
+* `threshold` -
 
 For example, to change the padding factor:
 
@@ -103,13 +103,13 @@ s.settings
 ## Colormaps
 Several custom colormaps are included:
 
-* `electricblue` - 
-* `strava` - 
-* `gyroscope` - 
+* `electricblue` -
+* `strava` -
+* `gyroscope` -
 
-To change colormaps,
+To change colormaps:
 
 ```python
-s.colormap('gyroscope')
+s.color('gyroscope')
 ```
 
